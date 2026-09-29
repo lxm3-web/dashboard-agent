@@ -28,3 +28,10 @@
 | `tools/資料脫敏器.html`、`tools/訂閱流失預警儀表板.html` | 課堂教具（本機 HTML），人手動 demo 用；你自己用 Python 做同樣的事 |
 
 資料全部虛構（example.com），公司「觀點週刊」為虛構。可用 Python（標準庫＋csv）；不要安裝套件。
+
+## 啟動程序（每次開工先做，做完才處理指示）
+1. 資料在 `data/`（repo 內建，尚未接雲端 Sheet）。
+2. 讀 `memory/MEMORY.md`（索引）→ 依索引讀相關記憶檔，再讀 `memory/CONVERSATION_LOG.md` 最上面幾筆：上次做到哪、人怎麼糾正過。
+3. 用 `knowledge/` 的規則與 `.claude/skills/` 的技能做事（本 Agent 自備：revops）。技能是判斷框架，不取代上面的鐵律。
+4. 收工前：把「這次學到、下次要記」寫進 `memory/`（被糾正一次就寫，同一件事不准讓人講第二次），並在 `memory/CONVERSATION_LOG.md` 最上面加一筆。`log/report_log.md` 是每次產出的流水帳，不等於記憶。
+5. **demo 歸零只清 `outbox/`、`log/` 與資料快照，不清 `memory/`、`knowledge/`、`.claude/`**。
